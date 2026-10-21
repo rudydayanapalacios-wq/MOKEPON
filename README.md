@@ -69,22 +69,19 @@ Antes de ejecutar el proyecto necesitas:
 - Los archivos del proyecto en tu equipo.
 - Un navegador actualizado.
 
+
 ## 🟠 Instalación y ejecución
 
 ### 1. Descargar o clonar el proyecto
 
-Si ya tienes la carpeta del proyecto, abre PowerShell o una terminal dentro de ella. Si vas a clonar el repositorio, usa la URL de tu propio repositorio:
-
 ```bash
-git clone URL-DE-TU-REPOSITORIO
+git clone https://github.com/rudydayanapalacios-wq/MOKEPON
 cd mokepon
 ```
 
-> Reemplaza `URL-DE-TU-REPOSITORIO` por la URL real del repositorio. Si ya tienes el proyecto descargado, no necesitas volver a clonarlo.
+> Reemplaza `https://github.com/rudydayanapalacios-wq/MOKEPON` por la URL real de tu repositorio de GitHub.
 
 ### 2. Instalar las dependencias
-
-Si el proyecto incluye `package.json`, ejecuta:
 
 ```bash
 npm install
@@ -92,46 +89,59 @@ npm install
 
 ### 3. Iniciar el servidor
 
-Desde la carpeta que contiene `index.js`, ejecuta:
-
 ```bash
 node index.js
 ```
 
-Si Windows no reconoce el comando `node`, comprueba que Node.js esté instalado y configurado en el PATH. En una instalación típica de Windows también puedes probar:
+Si Windows no reconoce el comando `node`, puedes usar:
 
 ```powershell
 & "C:\Program Files\nodejs\node.exe" index.js
 ```
 
-Cuando aparezca el mensaje `Servidor funcionando`, deja esa terminal abierta mientras juegas.
+Cuando aparezca el mensaje `Servidor funcionando`, deja la terminal abierta mientras juegas.
 
-### 4. Abrir el juego
+### 4. Abrir el juego en el computador
 
-En el navegador del computador, visita:
+🎮 **Enlace local:**
 
-```text
-http://localhost:8080/
-```
+[http://localhost:8080/](http://localhost:8080/)
 
 ## 🪻 Jugar desde el celular
 
-Para probar el juego desde un celular conectado a la misma red Wi-Fi:
+Puedes jugar desde el celular si ambos dispositivos están conectados a la misma red Wi-Fi.
 
-1. Conecta el celular y el computador a la misma red Wi-Fi.
-2. En Windows, abre otra ventana de PowerShell y ejecuta:
+### 1. Consultar la IP del computador
 
-   ```powershell
-   ipconfig
-   ```
+Abre otra ventana de PowerShell y ejecuta:
 
-3. Busca la **Dirección IPv4** del adaptador Wi-Fi del computador.
-4. En el navegador del celular, abre `http://DIRECCION-IP:8080/`, reemplazando `DIRECCION-IP` por la dirección IPv4 real.
-5. Mantén el servidor encendido en el computador.
+```powershell
+ipconfig
+```
 
-**Importante:** si el juego carga pero no se conecta al servidor, revisa las direcciones usadas en las peticiones `fetch` de `public/mokepon.js`. Al jugar desde el celular, `localhost` apunta al propio celular, no al computador. Usa la IP local del computador para esas peticiones cuando corresponda.
+Busca la dirección IPv4 del adaptador Wi-Fi.
 
-Si la conexión es rechazada, comprueba que ambos dispositivos estén en la misma red, que el servidor siga activo y que el Firewall de Windows permita la conexión.
+### 2. Abrir el juego desde el celular
+
+Usa la IP que encontraste, seguida del puerto `8080`.
+
+📱 **Enlace para el celular:**
+
+`http://IP-DEL-COMPUTADOR:8080/`
+
+Por ejemplo, si la IP de tu computador es `192.168.1.14`, el enlace sería:
+
+[http://192.168.1.14:8080/](http://192.168.1.14:8080/)
+
+> **Importante:** la IP del ejemplo debe coincidir con la dirección IPv4 actual de tu computador. Si cambia, actualiza el enlace.
+
+### 3. Si el juego no conecta
+
+- Mantén el servidor encendido en el computador.
+- Comprueba que ambos dispositivos estén en la misma red Wi-Fi.
+- Revisa las direcciones utilizadas en las solicitudes `fetch` de `public/mokepon.js`. Desde el celular, `localhost` apunta al propio celular, no al computador.
+- Si la conexión es rechazada, revisa el Firewall de Windows.
+
 
 ## 🟠 Cómo jugar
 
@@ -204,7 +214,6 @@ Proyecto de práctica de desarrollo web, construido paso a paso con HTML, CSS, J
 
 <div align="center">
 
-<span style="color:#C9A7FF">LILA</span> · <span style="color:#FFAD66">NARANJA</span> · <span style="color:#E8CFFF">MORADO</span>
 
 *Gracias por visitar el proyecto.*
 
